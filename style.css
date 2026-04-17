@@ -11,30 +11,32 @@
   cursor: pointer;
 }
 
+.top-buttons {
+    display: block;       /* 垂直排列 */
+    margin-bottom: 8px;   /* 每个按钮下间距 */
+}
+
 .tooltip .tooltiptext {
-  visibility: hidden;
-  opacity: 0;
-  width: max-content;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 4px;
-  padding: 4px 8px;
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 6px;
-  white-space: nowrap;
-  transition: opacity 0.2s;
-  z-index: 10;
-  /* 允许选中 */
-  user-select: text;
+    visibility: hidden;
+    width: auto;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 4px 8px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
 }
 
 .tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
+    visibility: visible;
+    opacity: 1;
 }
 
 
