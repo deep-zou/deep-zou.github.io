@@ -1,76 +1,20 @@
 /* ===========================================
-   基础字体与布局
-=========================================== */
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background: #f9fafb;
-    color: #1f2937;
-}
-
-/* 卡片效果 */
-.card {
-    background: white;
-    padding: 24px;
-    border-radius: 16px;
-    max-width: 900px;
-    margin: auto;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-}
-
-/* 标题样式 */
-h1 {
-    font-size: 32px;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-h2 {
-    font-size: 20px;
-    margin-top: 32px;
-    margin-bottom: 12px;
-    font-weight: bold;
-}
-
-/* 链接样式 */
-a {
-    color: #4f46e5;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-/* 列表内容 */
-ul {
-    margin: 0;
-    padding-left: 20px;
-}
-li {
-    line-height: 1.8;
-}
-
-/* ===========================================
-   头像样式（自适应）
-=========================================== */
-.profile-img {
-    width: 100%;          /* 占容器宽度 */
-    max-width: 150px;     /* PC端最大宽度 */
-    height: auto;         /* 高度自适应 */
-    border-radius: 12px;
-    object-fit: cover;    /* 保证不变形 */
-    margin-bottom: 12px;
-}
-
-/* ===========================================
-   Header 区域
+   Header 区域 + 自适应头像 + 按钮
 =========================================== */
 .header {
     display: flex;
     gap: 24px;
     align-items: flex-start;
     flex-wrap: wrap; /* PC端可换行 */
+}
+
+.profile-img {
+    width: 100%;       /* 占容器宽度 */
+    max-width: 150px;  /* PC端最大宽度 */
+    height: auto;      /* 高度自适应 */
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 12px;
 }
 
 .header-text {
@@ -87,12 +31,19 @@ li {
 .header-buttons {
     display: flex;
     gap: 8px;
-    flex-wrap: wrap; /* 小屏幕自动换行 */
+    flex-wrap: wrap;
     margin-top: 8px;
+    justify-content: flex-start; /* PC端靠左排列 */
 }
 
-/* 按钮样式 */
-.btn-primary, .btn-outline {
+/* 每个按钮及tooltip */
+.header-buttons .tooltip {
+    display: inline-block;
+    position: relative;
+    width: auto;
+}
+
+.header-buttons .btn-outline {
     display: inline-block;
     padding: 6px 12px;
     border-radius: 6px;
@@ -103,19 +54,13 @@ li {
     text-align: center;
 }
 
-.btn-primary:hover, .btn-outline:hover {
+.header-buttons .btn-outline:hover {
     background: #111;
     color: white;
     border-color: #111;
 }
 
 /* tooltip */
-.tooltip {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-
 .tooltip .tooltiptext {
     visibility: hidden;
     width: auto;
@@ -137,13 +82,6 @@ li {
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
-}
-
-/* 分割线 */
-.divider {
-    height: 1px;
-    background: #e5e7eb;
-    margin: 24px 0;
 }
 
 /* ===========================================
@@ -222,15 +160,17 @@ li {
         text-align: center;
     }
 
-    .header-text {
-        width: 100%;
+    /* 头像最大宽度 */
+    .profile-img {
+        max-width: 120px;
     }
 
-    /* 按钮垂直排列 */
+    /* 按钮垂直排列，每个独占一行 */
     .header-buttons {
         flex-direction: column;
         width: 80%;
         margin: 8px auto 0 auto;
+        align-items: center;
     }
 
     .header-buttons .tooltip {
@@ -238,7 +178,7 @@ li {
         margin-bottom: 6px;
     }
 
-    .header-buttons a {
+    .header-buttons .btn-outline {
         width: 100%;
     }
 
@@ -251,10 +191,5 @@ li {
     .pub-links {
         margin-top: 6px;
         margin-left: 0;
-    }
-
-    /* 手机端头像最大宽度 */
-    .profile-img {
-        max-width: 120px;
     }
 }
