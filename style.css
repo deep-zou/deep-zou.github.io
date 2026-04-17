@@ -120,3 +120,68 @@ li {
     background: #e5e7eb;
     margin: 24px 0;
 }
+
+
+
+.pub-list-adv {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pub-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding: 16px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.pub-main {
+    max-width: 75%;
+}
+
+.pub-title {
+    display: block;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: #111;
+}
+
+.pub-authors {
+    display: block;
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.pub-venue {
+    display: block;
+    font-size: 13px;
+    color: #888;
+    font-style: italic;
+}
+
+.pub-links {
+    display: flex;
+    gap: 8px;
+    margin-left: 10px;
+}
+
+.pub-btn {
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 12px;
+    text-decoration: none;
+    color: #333;
+    transition: 0.2s;
+}
+
+.pub-btn:hover {
+    background: #111;
+    color: white;
+    border-color: #111;
+}
