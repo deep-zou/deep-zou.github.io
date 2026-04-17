@@ -51,22 +51,18 @@ li {
     line-height: 1.8;
 }
 
-
+/* ===========================================
+   头像样式（自适应）
 =========================================== */
-/* 头像自适应 */
 .profile-img {
-    width: 100%;          /* 容器宽度百分比 */
+    width: 100%;          /* 占容器宽度 */
     max-width: 150px;     /* PC端最大宽度 */
     height: auto;         /* 高度自适应 */
     border-radius: 12px;
-    object-fit: cover;    /* 保证图片不变形 */
+    object-fit: cover;    /* 保证不变形 */
     margin-bottom: 12px;
 }
-@media (max-width: 768px) {
-    .profile-img {
-        max-width: 120px;  /* 手机端最大宽度 */
-    }
-}
+
 /* ===========================================
    Header 区域
 =========================================== */
@@ -74,7 +70,7 @@ li {
     display: flex;
     gap: 24px;
     align-items: flex-start;
-    flex-wrap: wrap; /* PC端也可换行 */
+    flex-wrap: wrap; /* PC端可换行 */
 }
 
 .header-text {
@@ -84,11 +80,7 @@ li {
 }
 
 .subtitle {
-    margin: 0 0 4px 0;
-}
-
-.email {
-    margin: 8px 0;
+    margin: 4px 0 8px 0;
 }
 
 /* 按钮容器 */
@@ -108,6 +100,7 @@ li {
     text-decoration: none;
     color: #333;
     transition: 0.2s;
+    text-align: center;
 }
 
 .btn-primary:hover, .btn-outline:hover {
@@ -229,7 +222,6 @@ li {
         text-align: center;
     }
 
-    /* Header文本宽度 */
     .header-text {
         width: 100%;
     }
@@ -241,10 +233,13 @@ li {
         margin: 8px auto 0 auto;
     }
 
+    .header-buttons .tooltip {
+        width: 100%;
+        margin-bottom: 6px;
+    }
+
     .header-buttons a {
         width: 100%;
-        text-align: center;
-        margin-bottom: 6px;
     }
 
     /* Publications 手机垂直排列 */
@@ -256,5 +251,10 @@ li {
     .pub-links {
         margin-top: 6px;
         margin-left: 0;
+    }
+
+    /* 手机端头像最大宽度 */
+    .profile-img {
+        max-width: 120px;
     }
 }
