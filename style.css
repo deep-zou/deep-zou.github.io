@@ -1,48 +1,4 @@
-/* 照片*/
-.profile-img {
-  width: 100%;
-  height: auto;
-}
-
-/* 气泡 */
-.tooltip {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.top-buttons {
-    display: block;       /* 垂直排列 */
-    margin-bottom: 8px;   /* 每个按钮下间距 */
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: auto;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 4px 8px;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    white-space: nowrap;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}
-
-
-
-
-/* 基础字体与布局 */
+/* ========== 基础字体与布局 ========== */
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         Helvetica, Arial, sans-serif;
@@ -68,7 +24,6 @@ h1 {
     margin-bottom: 8px;
     font-weight: bold;
 }
-
 h2 {
     font-size: 20px;
     margin-top: 32px;
@@ -81,7 +36,6 @@ a {
     color: #4f46e5;
     text-decoration: none;
 }
-
 a:hover {
     text-decoration: underline;
 }
@@ -91,12 +45,11 @@ ul {
     margin: 0;
     padding-left: 20px;
 }
-
 li {
     line-height: 1.8;
 }
 
-/* 头像 */
+/* ========== 头像 ========== */
 .profile-img {
     width: 130px;
     height: 130px;
@@ -105,7 +58,7 @@ li {
     margin-bottom: 12px;
 }
 
-/* Header 区域 */
+/* ========== Header 区域 ========== */
 .header {
     display: flex;
     gap: 24px;
@@ -114,6 +67,61 @@ li {
 
 .header-text {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 顶部按钮 tooltip */
+.top-buttons {
+    display: block;       /* 垂直排列 */
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 4px 8px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 按钮样式 */
+.btn-primary, .btn-outline {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    text-decoration: none;
+    color: #333;
+    transition: 0.2s;
+}
+
+.btn-primary:hover, .btn-outline:hover {
+    background: #111;
+    color: white;
+    border-color: #111;
 }
 
 /* 分割线 */
@@ -123,8 +131,7 @@ li {
     margin: 24px 0;
 }
 
-
-
+/* ========== Publications 样式 ========== */
 .pub-list-adv {
     list-style: none;
     padding: 0;
@@ -135,7 +142,6 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-
     padding: 16px 12px;
     border-bottom: 1px solid #eee;
 }
@@ -186,4 +192,37 @@ li {
     background: #111;
     color: white;
     border-color: #111;
+}
+
+/* ========== 响应式手机适配 ========== */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* 头像+文字垂直排列 */
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-text {
+        width: 100%;
+    }
+
+    .header-text .top-buttons {
+        width: 100%;
+    }
+
+    .header-text .btn-primary,
+    .header-text .btn-outline {
+        width: 80%;
+        margin: 4px auto; /* 居中显示 */
+    }
+
+    .pub-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pub-links {
+        margin-top: 6px;
+        margin-left: 0;
+    }
 }
