@@ -1,3 +1,13 @@
+.card {
+    background: white; 
+    padding: 24px;
+    border-radius: 16px;                  /* 圆角边框 */
+    max-width: 900px;
+    margin: auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* 阴影 */
+    border: 1px solid #e5e7eb;           /* 可选，如果想更明显边框 */
+}
+
 /* ===========================================
    Header 区域 + 自适应头像 + 按钮
 =========================================== */
